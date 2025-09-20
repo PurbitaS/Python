@@ -1,4 +1,4 @@
-# practice 7 - DNA base and GC % counter
+# practice 7 - DNA base, length, GC%, and AT% counter
 # after multiple revisions :)
 
 print("Welcome to your own DNA counter!\n")
@@ -23,7 +23,6 @@ def base_count(sequence):           #defining a function that counts DNA bps
       c_count += 1
   return a_count, t_count, g_count, c_count
 
-
 result = base_count(dna)          #callilng the function
 if result:                        #checks variable result and runs the condition if there is a valid sequence
   a_total, t_total, g_total, c_total = result             #tuple unpacking- assign each value from the tuple into its own variable
@@ -36,4 +35,11 @@ length = len(dna)
 print("\nLength of the sequence is ", length)
 
 print("GC content in the sequence is ", (g_total + c_total) / length * 100, "%")
+print("AT content in the sequence is ", (a_total + t_total) / length * 100, "%")
+
+if (g_total + c_total) / length * 100 >= 50:
+  print("Your sequence is GC rich")
+else:
+  print("Your sequence is AT rich")
+
 print("\nThank You")
